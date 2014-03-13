@@ -1,0 +1,5 @@
+RoPi - Robotics for the Raspberry Pi
+https://github.com/TheBurrito/ropi
+
+This repository contains all of the source code for both the Raspberry Pi and
+the ATmega2560 on the RoPi expansion board.
