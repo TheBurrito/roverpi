@@ -32,22 +32,26 @@ local=$(subst $(CURDIR)/,,$1)
 
 define cc
 	@echo "    CC $(notdir $@)"
+	@mkdir -p $(BUILD_DIR)
 	$(quiet)  $(CC) -o $(BUILD_DIR)/$(subst .c,.o,$(notdir $^)) -c $(call local,$^)
 endef
 
 define cxx
 	@echo "    CXX $(notdir $@)"
+	@mkdir -p $(BUILD_DIR)
 	$(quiet)  $(CXX) -o $(BUILD_DIR)/$(subst .cpp,.o,$(notdir $^)) -c $(filter-out %.a,$(call local,$^))
 endef
 
 define ld
 	@echo "    LD $@"
 	$(quiet)  $(LD) -o $(BUILD_DIR)/$@ $(foreach file,$(call local,$^),$(BUILD_DIR)/$(notdir $(file)))
+	@mkdir -p $(BIN_DIR)
 	$(mv) $(BUILD_DIR)/$@ $(BIN_DIR)
 endef
 
 define ar
 	@echo "    AR $@"
 	$(quiet)  $(AR) $(BUILD_DIR)/$@ $(foreach file,$(call local,$^),$(BUILD_DIR)/$(notdir $(file)))
+	@mkdir -p $(LIB_DIR)
 	$(cp) $(BUILD_DIR)/$@ $(LIB_DIR)
 endef
