@@ -5340,56 +5340,6 @@ chip</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="pinhead">
-<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="1X01">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
-<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="PINHD1">
-<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PINHD-1X1" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X01">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5423,7 +5373,7 @@ chip</description>
 <part name="C2" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C3" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
-<part name="C4" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
+<part name="C11" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -5470,13 +5420,15 @@ chip</description>
 <part name="C14" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
 <part name="L1" library="dab5267" deviceset="L-US" device="" value="10uH"/>
 <part name="C15" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
-<part name="AREF" library="pinhead" deviceset="PINHD-1X1" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="S1" library="SparkFun-Electromechanical" deviceset="SWITCH-MOMENTARY-2" device="SMD-4"/>
+<part name="C4" library="SparkFun-Passives" deviceset="CAP" device="0603-CAP" value="100n"/>
+<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10K"/>
+<part name="R5" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -5506,7 +5458,7 @@ chip</description>
 <instance part="C2" gate="G$1" x="-60.96" y="114.3"/>
 <instance part="GND3" gate="1" x="134.62" y="99.06"/>
 <instance part="C3" gate="G$1" x="-30.48" y="111.76" rot="R90"/>
-<instance part="C4" gate="G$1" x="-12.7" y="86.36"/>
+<instance part="C11" gate="G$1" x="-12.7" y="86.36"/>
 <instance part="SUPPLY4" gate="G$1" x="63.5" y="279.4"/>
 <instance part="SUPPLY5" gate="G$1" x="5.08" y="297.18"/>
 <instance part="GND4" gate="1" x="2.54" y="208.28"/>
@@ -5559,15 +5511,17 @@ chip</description>
 <attribute name="NAME" x="-13.716" y="107.061" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-13.716" y="101.981" size="1.778" layer="96"/>
 </instance>
-<instance part="AREF" gate="G$1" x="-20.32" y="134.62"/>
 <instance part="SUPPLY1" gate="G$1" x="50.8" y="182.88"/>
 <instance part="SUPPLY2" gate="G$1" x="134.62" y="116.84"/>
 <instance part="SUPPLY3" gate="G$1" x="-5.08" y="142.24"/>
-<instance part="SUPPLY7" gate="G$1" x="134.62" y="35.56"/>
+<instance part="SUPPLY7" gate="G$1" x="134.62" y="43.18"/>
 <instance part="SUPPLY14" gate="G$1" x="137.16" y="83.82"/>
 <instance part="S1" gate="G$1" x="-66.04" y="127" smashed="yes">
 <attribute name="NAME" x="-68.58" y="129.54" size="1.778" layer="95"/>
 </instance>
+<instance part="C4" gate="G$1" x="154.94" y="35.56"/>
+<instance part="R4" gate="G$1" x="55.88" y="175.26" rot="R90"/>
+<instance part="R5" gate="G$1" x="63.5" y="175.26" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -5616,8 +5570,12 @@ chip</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="IO_VCC2"/>
-<wire x1="48.26" y1="165.1" x2="81.28" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="165.1" x2="63.5" y2="165.1" width="0.1524" layer="91"/>
 <label x="68.58" y="165.1" size="1.778" layer="95"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="165.1" x2="81.28" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="170.18" x2="63.5" y2="165.1" width="0.1524" layer="91"/>
+<junction x="63.5" y="165.1"/>
 </segment>
 </net>
 <net name="AVR_SDA" class="0">
@@ -5628,8 +5586,12 @@ chip</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="IO_VCC1"/>
-<wire x1="48.26" y1="167.64" x2="81.28" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="167.64" x2="55.88" y2="167.64" width="0.1524" layer="91"/>
 <label x="68.58" y="167.64" size="1.778" layer="95"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="167.64" x2="81.28" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="170.18" x2="55.88" y2="167.64" width="0.1524" layer="91"/>
+<junction x="55.88" y="167.64"/>
 </segment>
 </net>
 <net name="TX1" class="0">
@@ -6400,7 +6362,8 @@ chip</description>
 <pinref part="U$2" gate="G$1" pin="7"/>
 <wire x1="134.62" y1="27.94" x2="134.62" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="30.48" x2="134.62" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="33.02" x2="134.62" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="33.02" x2="134.62" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="40.64" x2="134.62" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="25.4" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="5"/>
 <wire x1="134.62" y1="27.94" x2="137.16" y2="27.94" width="0.1524" layer="91"/>
@@ -6412,6 +6375,9 @@ chip</description>
 <junction x="134.62" y="30.48"/>
 <junction x="134.62" y="33.02"/>
 <pinref part="SUPPLY7" gate="G$1" pin="5V"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="154.94" y1="40.64" x2="134.62" y2="40.64" width="0.1524" layer="91"/>
+<junction x="134.62" y="40.64"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="2"/>
@@ -6439,7 +6405,7 @@ chip</description>
 <junction x="-5.08" y="99.06"/>
 <junction x="-5.08" y="96.52"/>
 <junction x="-5.08" y="93.98"/>
-<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="C11" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="91.44" x2="-12.7" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="C12" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="93.98" x2="-22.86" y2="93.98" width="0.1524" layer="91"/>
@@ -6462,6 +6428,12 @@ chip</description>
 <wire x1="48.26" y1="180.34" x2="50.8" y2="180.34" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="180.34" x2="50.8" y2="182.88" width="0.1524" layer="91"/>
 <pinref part="SUPPLY1" gate="G$1" pin="5V"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="180.34" x2="55.88" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="55.88" y1="180.34" x2="63.5" y2="180.34" width="0.1524" layer="91"/>
+<junction x="55.88" y="180.34"/>
+<junction x="50.8" y="180.34"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -6509,7 +6481,7 @@ chip</description>
 <wire x1="-33.02" y1="83.82" x2="-33.02" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="C12" gate="G$1" pin="2"/>
 <wire x1="-22.86" y1="83.82" x2="-22.86" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="C11" gate="G$1" pin="2"/>
 <wire x1="-12.7" y1="83.82" x2="-12.7" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-33.02" y="81.28"/>
 <junction x="-22.86" y="81.28"/>
@@ -6689,6 +6661,8 @@ chip</description>
 <junction x="154.94" y="27.94"/>
 <junction x="154.94" y="25.4"/>
 <junction x="154.94" y="30.48"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<junction x="154.94" y="33.02"/>
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="1"/>
@@ -6768,12 +6742,7 @@ chip</description>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="U1" gate="1" pin="AREF"/>
-<wire x1="-27.94" y1="111.76" x2="-25.4" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="AREF" gate="G$1" pin="1"/>
-<wire x1="-25.4" y1="111.76" x2="-2.54" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="134.62" x2="-25.4" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="134.62" x2="-25.4" y2="111.76" width="0.1524" layer="91"/>
-<junction x="-25.4" y="111.76"/>
+<wire x1="-27.94" y1="111.76" x2="-2.54" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PI_RX" class="0">
