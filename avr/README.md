@@ -1,8 +1,9 @@
-This sub project contains the code for programming the ATmega2560 on the RoPi.
-Source code is available at https://github.com/TheBurrito/ropi
+This sub project contains the code for programming the ATmega2560 on the RoverPi
+
+Source code is available at https://github.com/TheBurrito/roverpi
 
 The project is organized into:
--base libraries: ./ropi, ./include/ropi
+-base libraries: ./roverpi, ./include/roverpi
 -test programs: ./test
 -prewritten firmware: ./firmware
 
