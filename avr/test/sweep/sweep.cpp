@@ -1,10 +1,10 @@
-#include <ropi.h>
+#include <roverpi.h>
 
 #include <util/delay.h>
 
 #define servo_num 1
 
-using namespace ropi;
+using namespace roverpi;
 
 int main(void) {
 

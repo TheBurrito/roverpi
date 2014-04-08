@@ -19,8 +19,12 @@ include $(srcroot)/commands.mk
 include $(srcroot)/dirs.mk
 include $(srcroot)/rules.mk
 
+ifndef NO_AVR
+
 #uncomment the following include to add support for AVR projects.
 include $(srcroot)/avr.mk
+
+endif
 
 ifeq ("$(origin V)", "command line")
   VERBOSE=$(V)

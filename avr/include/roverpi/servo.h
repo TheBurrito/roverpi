@@ -3,7 +3,7 @@
 
 #include <inttypes.h>
 
-namespace ropi {
+namespace roverpi {
 
 void servo_init();
 

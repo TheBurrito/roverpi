@@ -1,3 +1,9 @@
+/**
+
+base contains all of the pinout configuration for the expansion board.
+
+**/
+
 #ifndef base_h_
 #define base_h_
 
@@ -11,7 +17,7 @@
 
 #include <avr/io.h>
 
-namespace ropi {
+namespace roverpi {
 
 inline long map(long x, long in_min, long in_max, long out_min, long out_max)
 {

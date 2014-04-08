@@ -2,4 +2,4 @@
 
 all: blink.hex
 
-blink.hex: libropi.a
+blink.hex: libroverpi.a

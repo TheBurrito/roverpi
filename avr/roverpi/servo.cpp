@@ -1,9 +1,9 @@
-#include <ropi/base.h>
-#include <ropi/servo.h>
+#include <roverpi/base.h>
+#include <roverpi/servo.h>
 
 #include <avr/interrupt.h>
 
-namespace ropi {
+namespace roverpi {
 
 #define SERVO_COUNT 12
 

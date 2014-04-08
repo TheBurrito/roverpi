@@ -2,10 +2,10 @@
 AVR_MCU= atmega2560
 
 #The AVRDUDE_* variables configure how avrdude is run
-AVRDUDE_BAUD= 115200
-AVRDUDE_PORT= /dev/ttyACM0
-AVRDUDE_PRG= stk500v2
-AVRDUDE_PART= m2560
+AVRDUDE_BAUD= -b 19200
+AVRDUDE_PORT= -P /dev/ttyUSB0
+AVRDUDE_PRG= -c stk500v1
+AVRDUDE_PART= -p m2560
 
 #These flags override the normal flags and ensure a properly compile AVR hex
 CXXFLAGS= -g -Os -Wall -fno-exceptions -ffunction-sections -fdata-sections -MMD -mmcu=$(AVR_MCU)
@@ -32,13 +32,16 @@ endef
 
 define avrdude
 	@echo "    UPLOAD $(notdir $^)"
-	$(quiet) $(AVRDUDE) -b$(AVRDUDE_BAUD) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PRG) -p $(AVRDUDE_PART) -U flash:w:$(BIN_DIR)/$(notdir $^)
+	$(quiet) $(AVRDUDE)  $(AVRDUDE_BAUD) $(AVRDUDE_PORT) $(AVRDUDE_PRG) $(AVRDUDE_PART) -U flash:w:$(BIN_DIR)/$(notdir $^)
 endef
 
+#If the target is a hex, we get there by first creating a matching object file
 %.hex: %.o
 	$(hex)
 
-up-%: %
+#auto target for any existing .hex target to use avrdude to upload hex file
+up-%.hex: %.hex
 	$(avrdude)
 
+#also make hex files depend on their matching cpp files
 %.hex: %.cpp

@@ -1,19 +1,21 @@
-#include <ropi.h>
+#include <roverpi.h>
 
 #include <util/delay.h>
 
-using namespace ropi;
+using namespace roverpi;
+
+#define PIN 0
 
 int main(void) {
 
 	init();
 
-	pinMode(0, OUTPUT);
+	pinMode(PIN, OUTPUT);
 	
 	while (1) {
-		digitalWrite(0, HIGH);
+		digitalWrite(PIN, HIGH);
 		_delay_ms(30);
-		digitalWrite(0, LOW);
+		digitalWrite(PIN, LOW);
 		_delay_ms(70);
 	}
 	

@@ -1,9 +1,9 @@
 #ifndef digital_h_
 #define digital_h_
 
-#include <ropi/base.h>
+#include <roverpi/base.h>
 
-namespace ropi {
+namespace roverpi {
 
 inline void digitalWrite(uint8_t pin, value_t val) {
 	volatile uint8_t * port = out_port(pin);

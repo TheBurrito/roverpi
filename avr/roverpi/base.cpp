@@ -1,8 +1,8 @@
-#include <ropi/base.h>
-#include <ropi/servo.h>
+#include <roverpi/base.h>
+#include <roverpi/servo.h>
+#include <roverpi/motor.h>
 
-
-namespace ropi {
+namespace roverpi {
 
 volatile uint8_t * out_ports[4];
 volatile uint8_t * in_ports[4];
@@ -36,6 +36,7 @@ void init() {
 	dir_ports[3] = &DDRC;
 	
 	servo_init();
+	motor_init();
 }
 
 void pinMode(uint8_t pin, pinmode_t mode) {

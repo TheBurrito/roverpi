@@ -2,4 +2,4 @@
 
 all: sweep.hex
 
-sweep.hex: libropi.a
+sweep.hex: libroverpi.a
