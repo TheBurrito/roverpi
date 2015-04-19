@@ -1,3 +1,8 @@
+NOTE: This repository is dead and replaced by the roverpi_hat repo
+https://github.com/TheBurrito/roverpi_hat
+
+This repository is being left for reference until the new repository is up and running.
+
 RoverPi - Robotics for the Raspberry Pi
 https://github.com/TheBurrito/roverpi
 
